@@ -1,0 +1,24 @@
+{
+  "testmono04App": {
+    "origenAgua": {
+      "home": {
+        "title": "Origen Aguas",
+        "createLabel": "Crear nuevo Origen Agua",
+        "createOrEditLabel": "Crear o editar Origen Agua",
+        "notFound": "Ningún Origen Aguas encontrado"
+      },
+      "created": "Un nuevo Origen Agua ha sido creado con el identificador {{ param }}",
+      "updated": "Un Origen Agua ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Origen Agua ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Origen Agua {{ id }}?"
+      },
+      "detail": {
+        "title": "Origen Agua"
+      },
+      "nombre": "Nombre",
+      "estado": "Estado",
+      "relevamiento": "Relevamiento"
+    }
+  }
+}

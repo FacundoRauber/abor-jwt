@@ -1,0 +1,24 @@
+{
+  "testmono04App": {
+    "origenEnergia": {
+      "home": {
+        "title": "Origen Energias",
+        "createLabel": "Create a new Origen Energia",
+        "createOrEditLabel": "Create or edit a Origen Energia",
+        "notFound": "No Origen Energias found"
+      },
+      "created": "A new Origen Energia is created with identifier {{ param }}",
+      "updated": "A Origen Energia is updated with identifier {{ param }}",
+      "deleted": "A Origen Energia is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Origen Energia {{ id }}?"
+      },
+      "detail": {
+        "title": "Origen Energia"
+      },
+      "nombre": "Nombre",
+      "estado": "Estado",
+      "relevamiento": "Relevamiento"
+    }
+  }
+}

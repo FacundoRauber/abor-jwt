@@ -1,0 +1,24 @@
+{
+  "testmono04App": {
+    "origenEnergia": {
+      "home": {
+        "title": "Origen Energias",
+        "createLabel": "Crear nuevo Origen Energia",
+        "createOrEditLabel": "Crear o editar Origen Energia",
+        "notFound": "Ningún Origen Energias encontrado"
+      },
+      "created": "Un nuevo Origen Energia ha sido creado con el identificador {{ param }}",
+      "updated": "Un Origen Energia ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Origen Energia ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Origen Energia {{ id }}?"
+      },
+      "detail": {
+        "title": "Origen Energia"
+      },
+      "nombre": "Nombre",
+      "estado": "Estado",
+      "relevamiento": "Relevamiento"
+    }
+  }
+}

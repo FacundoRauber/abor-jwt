@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="origenAgua">
+            <h2><span jhiTranslate="testmono04App.origenAgua.detail.title">Origen Agua</span> {{origenAgua.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="testmono04App.origenAgua.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{origenAgua.nombre}}</span>
+                </dd>
+                <dt><span jhiTranslate="testmono04App.origenAgua.estado">Estado</span></dt>
+                <dd>
+                    <span>{{origenAgua.estado}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/origen-agua', origenAgua.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

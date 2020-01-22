@@ -1,0 +1,76 @@
+{
+    "name": "Integrante",
+    "fields": [
+        {
+            "fieldName": "dni",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "apelllido",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "nombre",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "fechaNacimiento",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "edad",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": 140
+        },
+        {
+            "fieldName": "sexo",
+            "fieldType": "Sexo",
+            "fieldValues": "Hombre,Mujer,Otro"
+        },
+        {
+            "fieldName": "estado",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "relevamiento",
+            "otherEntityRelationshipName": "integrante",
+            "relationshipName": "relevamiento"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "comunidad",
+            "otherEntityRelationshipName": "integrante",
+            "relationshipName": "comunidad",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200122234356",
+    "entityTableName": "integrante",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": [
+        "testmono04"
+    ]
+}

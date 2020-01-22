@@ -1,0 +1,36 @@
+{
+    "name": "TipoServicio",
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "estado",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "relevamiento",
+            "otherEntityRelationshipName": "tiposervicio",
+            "relationshipName": "relevamiento"
+        }
+    ],
+    "changelogDate": "20200122234401",
+    "entityTableName": "tipo_servicio",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": [
+        "testmono04"
+    ]
+}

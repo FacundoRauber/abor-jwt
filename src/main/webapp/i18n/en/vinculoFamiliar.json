@@ -1,0 +1,23 @@
+{
+  "testmono04App": {
+    "vinculoFamiliar": {
+      "home": {
+        "title": "Vinculo Familiars",
+        "createLabel": "Create a new Vinculo Familiar",
+        "createOrEditLabel": "Create or edit a Vinculo Familiar",
+        "notFound": "No Vinculo Familiars found"
+      },
+      "created": "A new Vinculo Familiar is created with identifier {{ param }}",
+      "updated": "A Vinculo Familiar is updated with identifier {{ param }}",
+      "deleted": "A Vinculo Familiar is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Vinculo Familiar {{ id }}?"
+      },
+      "detail": {
+        "title": "Vinculo Familiar"
+      },
+      "nombre": "Nombre",
+      "estado": "Estado"
+    }
+  }
+}

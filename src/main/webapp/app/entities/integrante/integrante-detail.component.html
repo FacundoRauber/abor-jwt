@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="integrante">
+            <h2><span jhiTranslate="testmono04App.integrante.detail.title">Integrante</span> {{integrante.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="testmono04App.integrante.dni">Dni</span></dt>
+                <dd>
+                    <span>{{integrante.dni}}</span>
+                </dd>
+                <dt><span jhiTranslate="testmono04App.integrante.apelllido">Apelllido</span></dt>
+                <dd>
+                    <span>{{integrante.apelllido}}</span>
+                </dd>
+                <dt><span jhiTranslate="testmono04App.integrante.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{integrante.nombre}}</span>
+                </dd>
+                <dt><span jhiTranslate="testmono04App.integrante.fechaNacimiento">Fecha Nacimiento</span></dt>
+                <dd>
+                    <span>{{integrante.fechaNacimiento}}</span>
+                </dd>
+                <dt><span jhiTranslate="testmono04App.integrante.edad">Edad</span></dt>
+                <dd>
+                    <span>{{integrante.edad}}</span>
+                </dd>
+                <dt><span jhiTranslate="testmono04App.integrante.sexo">Sexo</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'testmono04App.Sexo.' + integrante.sexo}}">{{integrante.sexo}}</span>
+                </dd>
+                <dt><span jhiTranslate="testmono04App.integrante.estado">Estado</span></dt>
+                <dd>
+                    <span>{{integrante.estado}}</span>
+                </dd>
+                <dt><span jhiTranslate="testmono04App.integrante.comunidad">Comunidad</span></dt>
+                <dd>
+                    <div *ngIf="integrante.comunidad">
+                        <a [routerLink]="['/comunidad', integrante.comunidad?.id, 'view']">{{integrante.comunidad?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/integrante', integrante.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

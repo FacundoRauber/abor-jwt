@@ -1,0 +1,10 @@
+{
+  "testmono04App": {
+    "Sexo": {
+      "null": "",
+      "Hombre": "Hombre",
+      "Mujer": "Mujer",
+      "Otro": "Otro"
+    }
+  }
+}

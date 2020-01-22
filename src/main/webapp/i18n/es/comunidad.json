@@ -1,0 +1,24 @@
+{
+  "testmono04App": {
+    "comunidad": {
+      "home": {
+        "title": "Comunidads",
+        "createLabel": "Crear nuevo Comunidad",
+        "createOrEditLabel": "Crear o editar Comunidad",
+        "notFound": "Ningún Comunidads encontrado"
+      },
+      "created": "Un nuevo Comunidad ha sido creado con el identificador {{ param }}",
+      "updated": "Un Comunidad ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Comunidad ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Comunidad {{ id }}?"
+      },
+      "detail": {
+        "title": "Comunidad"
+      },
+      "nombre": "Nombre",
+      "estado": "Estado",
+      "integrante": "Integrante"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "testmono04App": {
+    "tipoServicio": {
+      "home": {
+        "title": "Tipo Servicios",
+        "createLabel": "Crear nuevo Tipo Servicio",
+        "createOrEditLabel": "Crear o editar Tipo Servicio",
+        "notFound": "Ningún Tipo Servicios encontrado"
+      },
+      "created": "Un nuevo Tipo Servicio ha sido creado con el identificador {{ param }}",
+      "updated": "Un Tipo Servicio ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Tipo Servicio ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Tipo Servicio {{ id }}?"
+      },
+      "detail": {
+        "title": "Tipo Servicio"
+      },
+      "nombre": "Nombre",
+      "estado": "Estado",
+      "relevamiento": "Relevamiento"
+    }
+  }
+}

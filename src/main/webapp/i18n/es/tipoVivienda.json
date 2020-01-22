@@ -1,0 +1,23 @@
+{
+  "testmono04App": {
+    "tipoVivienda": {
+      "home": {
+        "title": "Tipo Viviendas",
+        "createLabel": "Crear nuevo Tipo Vivienda",
+        "createOrEditLabel": "Crear o editar Tipo Vivienda",
+        "notFound": "Ningún Tipo Viviendas encontrado"
+      },
+      "created": "Un nuevo Tipo Vivienda ha sido creado con el identificador {{ param }}",
+      "updated": "Un Tipo Vivienda ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Tipo Vivienda ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Tipo Vivienda {{ id }}?"
+      },
+      "detail": {
+        "title": "Tipo Vivienda"
+      },
+      "nombre": "Nombre",
+      "estado": "Estado"
+    }
+  }
+}

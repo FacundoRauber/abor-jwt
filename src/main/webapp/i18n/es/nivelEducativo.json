@@ -1,0 +1,23 @@
+{
+  "testmono04App": {
+    "nivelEducativo": {
+      "home": {
+        "title": "Nivel Educativos",
+        "createLabel": "Crear nuevo Nivel Educativo",
+        "createOrEditLabel": "Crear o editar Nivel Educativo",
+        "notFound": "Ningún Nivel Educativos encontrado"
+      },
+      "created": "Un nuevo Nivel Educativo ha sido creado con el identificador {{ param }}",
+      "updated": "Un Nivel Educativo ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Nivel Educativo ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Nivel Educativo {{ id }}?"
+      },
+      "detail": {
+        "title": "Nivel Educativo"
+      },
+      "nombre": "Nombre",
+      "estado": "Estado"
+    }
+  }
+}

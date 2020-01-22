@@ -1,0 +1,57 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="testmono04App.origenEnergia.home.title">Origen Energias</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-origen-energia" [routerLink]="['/origen-energia/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="testmono04App.origenEnergia.home.createLabel">
+            Create a new Origen Energia
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="origenEnergias?.length === 0">
+        <span jhiTranslate="testmono04App.origenEnergia.home.notFound">No origenEnergias found</span>
+    </div>
+    <div class="table-responsive" *ngIf="origenEnergias?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="testmono04App.origenEnergia.nombre">Nombre</span></th>
+            <th scope="col" ><span jhiTranslate="testmono04App.origenEnergia.estado">Estado</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let origenEnergia of origenEnergias ;trackBy: trackId">
+                <td><a [routerLink]="['/origen-energia', origenEnergia.id, 'view' ]">{{origenEnergia.id}}</a></td>
+                <td>{{origenEnergia.nombre}}</td>
+                <td>{{origenEnergia.estado}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/origen-energia', origenEnergia.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/origen-energia', origenEnergia.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(origenEnergia)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+{
+  "testmono04App": {
+    "relevamiento": {
+      "home": {
+        "title": "Relevamientos",
+        "createLabel": "Crear nuevo Relevamiento",
+        "createOrEditLabel": "Crear o editar Relevamiento",
+        "notFound": "Ningún Relevamientos encontrado"
+      },
+      "created": "Un nuevo Relevamiento ha sido creado con el identificador {{ param }}",
+      "updated": "Un Relevamiento ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Relevamiento ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Relevamiento {{ id }}?"
+      },
+      "detail": {
+        "title": "Relevamiento"
+      },
+      "fecha": "Fecha",
+      "escuela": "Escuela",
+      "puestoSalud": "Puesto Salud",
+      "estado": "Estado",
+      "integrante": "Integrante",
+      "origenenergia": "Origenenergia",
+      "origenagua": "Origenagua",
+      "tiposervicio": "Tiposervicio"
+    }
+  }
+}

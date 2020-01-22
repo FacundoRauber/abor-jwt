@@ -1,0 +1,66 @@
+{
+    "name": "Relevamiento",
+    "fields": [
+        {
+            "fieldName": "fecha",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "escuela",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "puestoSalud",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "estado",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "integrante",
+            "otherEntityRelationshipName": "relevamiento",
+            "relationshipName": "integrante",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "origenEnergia",
+            "otherEntityRelationshipName": "relevamiento",
+            "relationshipName": "origenenergia",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "origenAgua",
+            "otherEntityRelationshipName": "relevamiento",
+            "relationshipName": "origenagua",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "tipoServicio",
+            "otherEntityRelationshipName": "relevamiento",
+            "relationshipName": "tiposervicio",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200122234403",
+    "entityTableName": "relevamiento",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": [
+        "testmono04"
+    ]
+}

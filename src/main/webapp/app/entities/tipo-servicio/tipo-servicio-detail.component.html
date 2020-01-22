@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tipoServicio">
+            <h2><span jhiTranslate="testmono04App.tipoServicio.detail.title">Tipo Servicio</span> {{tipoServicio.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="testmono04App.tipoServicio.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{tipoServicio.nombre}}</span>
+                </dd>
+                <dt><span jhiTranslate="testmono04App.tipoServicio.estado">Estado</span></dt>
+                <dd>
+                    <span>{{tipoServicio.estado}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tipo-servicio', tipoServicio.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

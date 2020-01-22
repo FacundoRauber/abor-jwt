@@ -1,0 +1,30 @@
+{
+  "testmono04App": {
+    "integrante": {
+      "home": {
+        "title": "Integrantes",
+        "createLabel": "Crear nuevo Integrante",
+        "createOrEditLabel": "Crear o editar Integrante",
+        "notFound": "Ningún Integrantes encontrado"
+      },
+      "created": "Un nuevo Integrante ha sido creado con el identificador {{ param }}",
+      "updated": "Un Integrante ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Integrante ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Integrante {{ id }}?"
+      },
+      "detail": {
+        "title": "Integrante"
+      },
+      "dni": "Dni",
+      "apelllido": "Apelllido",
+      "nombre": "Nombre",
+      "fechaNacimiento": "Fecha Nacimiento",
+      "edad": "Edad",
+      "sexo": "Sexo",
+      "estado": "Estado",
+      "relevamiento": "Relevamiento",
+      "comunidad": "Comunidad"
+    }
+  }
+}

@@ -1,0 +1,109 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-integrante-heading" jhiTranslate="testmono04App.integrante.home.createOrEditLabel">Create or edit a Integrante</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testmono04App.integrante.dni" for="field_dni">Dni</label>
+                    <input type="number" class="form-control" name="dni" id="field_dni"
+                           formControlName="dni"/>
+                    <div *ngIf="editForm.get('dni')!.invalid && (editForm.get('dni')!.dirty || editForm.get('dni')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('dni')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('dni')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testmono04App.integrante.apelllido" for="field_apelllido">Apelllido</label>
+                    <input type="text" class="form-control" name="apelllido" id="field_apelllido"
+                           formControlName="apelllido"/>
+                    <div *ngIf="editForm.get('apelllido')!.invalid && (editForm.get('apelllido')!.dirty || editForm.get('apelllido')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('apelllido')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testmono04App.integrante.nombre" for="field_nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="field_nombre"
+                           formControlName="nombre"/>
+                    <div *ngIf="editForm.get('nombre')!.invalid && (editForm.get('nombre')!.dirty || editForm.get('nombre')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('nombre')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testmono04App.integrante.fechaNacimiento" for="field_fechaNacimiento">Fecha Nacimiento</label>
+                    <div class="input-group">
+                        <input id="field_fechaNacimiento" type="text" class="form-control" name="fechaNacimiento" ngbDatepicker  #fechaNacimientoDp="ngbDatepicker" formControlName="fechaNacimiento"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="fechaNacimientoDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testmono04App.integrante.edad" for="field_edad">Edad</label>
+                    <input type="number" class="form-control" name="edad" id="field_edad"
+                           formControlName="edad"/>
+                    <div *ngIf="editForm.get('edad')!.invalid && (editForm.get('edad')!.dirty || editForm.get('edad')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('edad')?.errors?.min" jhiTranslate="entity.validation.min" [translateValues]="{ min: 0 }">
+                            This field should be at least 0.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('edad')?.errors?.max" jhiTranslate="entity.validation.max" [translateValues]="{ max: 140 }">
+                            This field cannot be more than 140.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('edad')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testmono04App.integrante.sexo" for="field_sexo">Sexo</label>
+                    <select class="form-control" name="sexo" formControlName="sexo" id="field_sexo">
+                        <option value="Hombre">{{'testmono04App.Sexo.Hombre' | translate}}</option>
+                        <option value="Mujer">{{'testmono04App.Sexo.Mujer' | translate}}</option>
+                        <option value="Otro">{{'testmono04App.Sexo.Otro' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testmono04App.integrante.estado" for="field_estado">Estado</label>
+                    <input type="checkbox" class="form-control" name="estado" id="field_estado"
+                           formControlName="estado"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testmono04App.integrante.comunidad" for="field_comunidad">Comunidad</label>
+                    <select class="form-control" id="field_comunidad" name="comunidad" formControlName="comunidad">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="comunidadOption.id === editForm.get('comunidad')!.value?.id ? editForm.get('comunidad')!.value : comunidadOption" *ngFor="let comunidadOption of comunidads; trackBy: trackById">{{comunidadOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

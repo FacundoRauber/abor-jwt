@@ -1,0 +1,23 @@
+{
+  "testmono04App": {
+    "tipoOcupacion": {
+      "home": {
+        "title": "Tipo Ocupacions",
+        "createLabel": "Create a new Tipo Ocupacion",
+        "createOrEditLabel": "Create or edit a Tipo Ocupacion",
+        "notFound": "No Tipo Ocupacions found"
+      },
+      "created": "A new Tipo Ocupacion is created with identifier {{ param }}",
+      "updated": "A Tipo Ocupacion is updated with identifier {{ param }}",
+      "deleted": "A Tipo Ocupacion is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tipo Ocupacion {{ id }}?"
+      },
+      "detail": {
+        "title": "Tipo Ocupacion"
+      },
+      "nombre": "Nombre",
+      "estado": "Estado"
+    }
+  }
+}

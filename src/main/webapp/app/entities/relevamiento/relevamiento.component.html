@@ -1,0 +1,85 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="testmono04App.relevamiento.home.title">Relevamientos</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-relevamiento" [routerLink]="['/relevamiento/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="testmono04App.relevamiento.home.createLabel">
+            Create a new Relevamiento
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="relevamientos?.length === 0">
+        <span jhiTranslate="testmono04App.relevamiento.home.notFound">No relevamientos found</span>
+    </div>
+    <div class="table-responsive" *ngIf="relevamientos?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="fecha"><span jhiTranslate="testmono04App.relevamiento.fecha">Fecha</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="escuela"><span jhiTranslate="testmono04App.relevamiento.escuela">Escuela</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="puestoSalud"><span jhiTranslate="testmono04App.relevamiento.puestoSalud">Puesto Salud</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="estado"><span jhiTranslate="testmono04App.relevamiento.estado">Estado</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="integrante.id"><span jhiTranslate="testmono04App.relevamiento.integrante">Integrante</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="origenenergia.id"><span jhiTranslate="testmono04App.relevamiento.origenenergia">Origenenergia</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="origenagua.id"><span jhiTranslate="testmono04App.relevamiento.origenagua">Origenagua</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="tiposervicio.id"><span jhiTranslate="testmono04App.relevamiento.tiposervicio">Tiposervicio</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let relevamiento of relevamientos ;trackBy: trackId">
+                <td><a [routerLink]="['/relevamiento', relevamiento.id, 'view' ]">{{relevamiento.id}}</a></td>
+                <td>{{relevamiento.fecha | date:'mediumDate'}}</td>
+                <td>{{relevamiento.escuela}}</td>
+                <td>{{relevamiento.puestoSalud}}</td>
+                <td>{{relevamiento.estado}}</td>
+                <td>
+                    <div *ngIf="relevamiento.integrante">
+                        <a [routerLink]="['/integrante', relevamiento.integrante?.id, 'view' ]" >{{relevamiento.integrante?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="relevamiento.origenenergia">
+                        <a [routerLink]="['/origen-energia', relevamiento.origenenergia?.id, 'view' ]" >{{relevamiento.origenenergia?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="relevamiento.origenagua">
+                        <a [routerLink]="['/origen-agua', relevamiento.origenagua?.id, 'view' ]" >{{relevamiento.origenagua?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="relevamiento.tiposervicio">
+                        <a [routerLink]="['/tipo-servicio', relevamiento.tiposervicio?.id, 'view' ]" >{{relevamiento.tiposervicio?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/relevamiento', relevamiento.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/relevamiento', relevamiento.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(relevamiento)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

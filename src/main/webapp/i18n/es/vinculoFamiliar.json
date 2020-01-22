@@ -1,0 +1,23 @@
+{
+  "testmono04App": {
+    "vinculoFamiliar": {
+      "home": {
+        "title": "Vinculo Familiars",
+        "createLabel": "Crear nuevo Vinculo Familiar",
+        "createOrEditLabel": "Crear o editar Vinculo Familiar",
+        "notFound": "Ningún Vinculo Familiars encontrado"
+      },
+      "created": "Un nuevo Vinculo Familiar ha sido creado con el identificador {{ param }}",
+      "updated": "Un Vinculo Familiar ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Vinculo Familiar ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Vinculo Familiar {{ id }}?"
+      },
+      "detail": {
+        "title": "Vinculo Familiar"
+      },
+      "nombre": "Nombre",
+      "estado": "Estado"
+    }
+  }
+}

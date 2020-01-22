@@ -1,0 +1,36 @@
+{
+    "name": "OrigenAgua",
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "estado",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "relevamiento",
+            "otherEntityRelationshipName": "origenagua",
+            "relationshipName": "relevamiento"
+        }
+    ],
+    "changelogDate": "20200122234359",
+    "entityTableName": "origen_agua",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": [
+        "testmono04"
+    ]
+}

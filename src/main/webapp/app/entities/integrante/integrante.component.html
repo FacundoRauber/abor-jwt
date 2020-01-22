@@ -1,0 +1,73 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="testmono04App.integrante.home.title">Integrantes</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-integrante" [routerLink]="['/integrante/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="testmono04App.integrante.home.createLabel">
+            Create a new Integrante
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="integrantes?.length === 0">
+        <span jhiTranslate="testmono04App.integrante.home.notFound">No integrantes found</span>
+    </div>
+    <div class="table-responsive" *ngIf="integrantes?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="dni"><span jhiTranslate="testmono04App.integrante.dni">Dni</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="apelllido"><span jhiTranslate="testmono04App.integrante.apelllido">Apelllido</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="nombre"><span jhiTranslate="testmono04App.integrante.nombre">Nombre</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="fechaNacimiento"><span jhiTranslate="testmono04App.integrante.fechaNacimiento">Fecha Nacimiento</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="edad"><span jhiTranslate="testmono04App.integrante.edad">Edad</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="sexo"><span jhiTranslate="testmono04App.integrante.sexo">Sexo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="estado"><span jhiTranslate="testmono04App.integrante.estado">Estado</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="comunidad.id"><span jhiTranslate="testmono04App.integrante.comunidad">Comunidad</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let integrante of integrantes ;trackBy: trackId">
+                <td><a [routerLink]="['/integrante', integrante.id, 'view' ]">{{integrante.id}}</a></td>
+                <td>{{integrante.dni}}</td>
+                <td>{{integrante.apelllido}}</td>
+                <td>{{integrante.nombre}}</td>
+                <td>{{integrante.fechaNacimiento | date:'mediumDate'}}</td>
+                <td>{{integrante.edad}}</td>
+                <td jhiTranslate="{{'testmono04App.Sexo.' + integrante.sexo}}">{{integrante.sexo}}</td>
+                <td>{{integrante.estado}}</td>
+                <td>
+                    <div *ngIf="integrante.comunidad">
+                        <a [routerLink]="['/comunidad', integrante.comunidad?.id, 'view' ]" >{{integrante.comunidad?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/integrante', integrante.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/integrante', integrante.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(integrante)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

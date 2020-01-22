@@ -1,0 +1,23 @@
+{
+  "testmono04App": {
+    "tipoPlanAsistencia": {
+      "home": {
+        "title": "Tipo Plan Asistencias",
+        "createLabel": "Crear nuevo Tipo Plan Asistencia",
+        "createOrEditLabel": "Crear o editar Tipo Plan Asistencia",
+        "notFound": "Ningún Tipo Plan Asistencias encontrado"
+      },
+      "created": "Un nuevo Tipo Plan Asistencia ha sido creado con el identificador {{ param }}",
+      "updated": "Un Tipo Plan Asistencia ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Tipo Plan Asistencia ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Tipo Plan Asistencia {{ id }}?"
+      },
+      "detail": {
+        "title": "Tipo Plan Asistencia"
+      },
+      "nombre": "Nombre",
+      "estado": "Estado"
+    }
+  }
+}

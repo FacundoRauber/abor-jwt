@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Relevamiento.
+    -->
+    <changeSet id="20200122234403-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="integrante_id"
+                                 baseTableName="relevamiento"
+                                 constraintName="fk_relevamiento_integrante_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="integrante"/>
+
+        <addForeignKeyConstraint baseColumnNames="origenenergia_id"
+                                 baseTableName="relevamiento"
+                                 constraintName="fk_relevamiento_origenenergia_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="origen_energia"/>
+
+        <addForeignKeyConstraint baseColumnNames="origenagua_id"
+                                 baseTableName="relevamiento"
+                                 constraintName="fk_relevamiento_origenagua_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="origen_agua"/>
+
+        <addForeignKeyConstraint baseColumnNames="tiposervicio_id"
+                                 baseTableName="relevamiento"
+                                 constraintName="fk_relevamiento_tiposervicio_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tipo_servicio"/>
+
+    </changeSet>
+</databaseChangeLog>

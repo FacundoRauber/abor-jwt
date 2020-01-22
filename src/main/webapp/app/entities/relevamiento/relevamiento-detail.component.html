@@ -1,0 +1,63 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="relevamiento">
+            <h2><span jhiTranslate="testmono04App.relevamiento.detail.title">Relevamiento</span> {{relevamiento.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="testmono04App.relevamiento.fecha">Fecha</span></dt>
+                <dd>
+                    <span>{{relevamiento.fecha}}</span>
+                </dd>
+                <dt><span jhiTranslate="testmono04App.relevamiento.escuela">Escuela</span></dt>
+                <dd>
+                    <span>{{relevamiento.escuela}}</span>
+                </dd>
+                <dt><span jhiTranslate="testmono04App.relevamiento.puestoSalud">Puesto Salud</span></dt>
+                <dd>
+                    <span>{{relevamiento.puestoSalud}}</span>
+                </dd>
+                <dt><span jhiTranslate="testmono04App.relevamiento.estado">Estado</span></dt>
+                <dd>
+                    <span>{{relevamiento.estado}}</span>
+                </dd>
+                <dt><span jhiTranslate="testmono04App.relevamiento.integrante">Integrante</span></dt>
+                <dd>
+                    <div *ngIf="relevamiento.integrante">
+                        <a [routerLink]="['/integrante', relevamiento.integrante?.id, 'view']">{{relevamiento.integrante?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="testmono04App.relevamiento.origenenergia">Origenenergia</span></dt>
+                <dd>
+                    <div *ngIf="relevamiento.origenenergia">
+                        <a [routerLink]="['/origen-energia', relevamiento.origenenergia?.id, 'view']">{{relevamiento.origenenergia?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="testmono04App.relevamiento.origenagua">Origenagua</span></dt>
+                <dd>
+                    <div *ngIf="relevamiento.origenagua">
+                        <a [routerLink]="['/origen-agua', relevamiento.origenagua?.id, 'view']">{{relevamiento.origenagua?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="testmono04App.relevamiento.tiposervicio">Tiposervicio</span></dt>
+                <dd>
+                    <div *ngIf="relevamiento.tiposervicio">
+                        <a [routerLink]="['/tipo-servicio', relevamiento.tiposervicio?.id, 'view']">{{relevamiento.tiposervicio?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/relevamiento', relevamiento.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

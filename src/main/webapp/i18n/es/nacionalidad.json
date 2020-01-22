@@ -1,0 +1,23 @@
+{
+  "testmono04App": {
+    "nacionalidad": {
+      "home": {
+        "title": "Nacionalidads",
+        "createLabel": "Crear nuevo Nacionalidad",
+        "createOrEditLabel": "Crear o editar Nacionalidad",
+        "notFound": "Ningún Nacionalidads encontrado"
+      },
+      "created": "Un nuevo Nacionalidad ha sido creado con el identificador {{ param }}",
+      "updated": "Un Nacionalidad ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Nacionalidad ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Nacionalidad {{ id }}?"
+      },
+      "detail": {
+        "title": "Nacionalidad"
+      },
+      "nombre": "Nombre",
+      "estado": "Estado"
+    }
+  }
+}

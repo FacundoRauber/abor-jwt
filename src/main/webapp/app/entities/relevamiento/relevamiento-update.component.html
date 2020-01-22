@@ -1,0 +1,82 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-relevamiento-heading" jhiTranslate="testmono04App.relevamiento.home.createOrEditLabel">Create or edit a Relevamiento</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testmono04App.relevamiento.fecha" for="field_fecha">Fecha</label>
+                    <div class="input-group">
+                        <input id="field_fecha" type="text" class="form-control" name="fecha" ngbDatepicker  #fechaDp="ngbDatepicker" formControlName="fecha"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="fechaDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('fecha')!.invalid && (editForm.get('fecha')!.dirty || editForm.get('fecha')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('fecha')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testmono04App.relevamiento.escuela" for="field_escuela">Escuela</label>
+                    <input type="checkbox" class="form-control" name="escuela" id="field_escuela"
+                           formControlName="escuela"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testmono04App.relevamiento.puestoSalud" for="field_puestoSalud">Puesto Salud</label>
+                    <input type="checkbox" class="form-control" name="puestoSalud" id="field_puestoSalud"
+                           formControlName="puestoSalud"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testmono04App.relevamiento.estado" for="field_estado">Estado</label>
+                    <input type="checkbox" class="form-control" name="estado" id="field_estado"
+                           formControlName="estado"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testmono04App.relevamiento.integrante" for="field_integrante">Integrante</label>
+                    <select class="form-control" id="field_integrante" name="integrante" formControlName="integrante">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="integranteOption.id === editForm.get('integrante')!.value?.id ? editForm.get('integrante')!.value : integranteOption" *ngFor="let integranteOption of integrantes; trackBy: trackById">{{integranteOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testmono04App.relevamiento.origenenergia" for="field_origenenergia">Origenenergia</label>
+                    <select class="form-control" id="field_origenenergia" name="origenenergia" formControlName="origenenergia">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="origenEnergiaOption.id === editForm.get('origenenergia')!.value?.id ? editForm.get('origenenergia')!.value : origenEnergiaOption" *ngFor="let origenEnergiaOption of origenenergias; trackBy: trackById">{{origenEnergiaOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testmono04App.relevamiento.origenagua" for="field_origenagua">Origenagua</label>
+                    <select class="form-control" id="field_origenagua" name="origenagua" formControlName="origenagua">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="origenAguaOption.id === editForm.get('origenagua')!.value?.id ? editForm.get('origenagua')!.value : origenAguaOption" *ngFor="let origenAguaOption of origenaguas; trackBy: trackById">{{origenAguaOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testmono04App.relevamiento.tiposervicio" for="field_tiposervicio">Tiposervicio</label>
+                    <select class="form-control" id="field_tiposervicio" name="tiposervicio" formControlName="tiposervicio">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tipoServicioOption.id === editForm.get('tiposervicio')!.value?.id ? editForm.get('tiposervicio')!.value : tipoServicioOption" *ngFor="let tipoServicioOption of tiposervicios; trackBy: trackById">{{tipoServicioOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

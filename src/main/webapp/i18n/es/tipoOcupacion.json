@@ -1,0 +1,23 @@
+{
+  "testmono04App": {
+    "tipoOcupacion": {
+      "home": {
+        "title": "Tipo Ocupacions",
+        "createLabel": "Crear nuevo Tipo Ocupacion",
+        "createOrEditLabel": "Crear o editar Tipo Ocupacion",
+        "notFound": "Ningún Tipo Ocupacions encontrado"
+      },
+      "created": "Un nuevo Tipo Ocupacion ha sido creado con el identificador {{ param }}",
+      "updated": "Un Tipo Ocupacion ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Tipo Ocupacion ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Tipo Ocupacion {{ id }}?"
+      },
+      "detail": {
+        "title": "Tipo Ocupacion"
+      },
+      "nombre": "Nombre",
+      "estado": "Estado"
+    }
+  }
+}

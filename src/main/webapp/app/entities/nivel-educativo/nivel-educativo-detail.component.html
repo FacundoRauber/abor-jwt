@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="nivelEducativo">
+            <h2><span jhiTranslate="testmono04App.nivelEducativo.detail.title">Nivel Educativo</span> {{nivelEducativo.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="testmono04App.nivelEducativo.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{nivelEducativo.nombre}}</span>
+                </dd>
+                <dt><span jhiTranslate="testmono04App.nivelEducativo.estado">Estado</span></dt>
+                <dd>
+                    <span>{{nivelEducativo.estado}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/nivel-educativo', nivelEducativo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

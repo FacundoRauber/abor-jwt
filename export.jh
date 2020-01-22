@@ -1,0 +1,120 @@
+application {
+  config {
+    databaseType sql
+    devDatabaseType h2Memory
+    enableHibernateCache true
+    enableSwaggerCodegen true
+    enableTranslation true
+    jhiPrefix jhi
+    languages [es, en]
+    messageBroker false
+    nativeLanguage es
+    packageName com.marandu.testmono
+    prodDatabaseType postgresql
+    searchEngine false
+    serviceDiscoveryType false
+    skipClient false
+    skipServer false
+    testFrameworks [protractor]
+    websocket false
+    applicationType monolith
+    baseName testmono04
+    serverPort 8080
+    authenticationType jwt
+    cacheProvider ehcache
+    buildTool maven
+    useSass true
+    clientPackageManager npm
+    clientFramework angularX
+    skipUserManagement true
+  }
+   entities * 
+}
+
+entity VinculoFamiliar {
+	nombre String required,
+    estado Boolean
+}
+
+entity TipoPlanAsistencia {
+	nombre String required,
+    estado Boolean
+}
+entity Nacionalidad {
+	nombre String required,
+	estado Boolean
+}
+
+entity NivelEducativo {
+	nombre String required,
+    estado Boolean
+}
+entity TipoOcupacion {
+	nombre String required,
+    estado Boolean
+}
+entity Integrante {
+	dni Integer required,
+    apelllido String required,
+	nombre String required,
+    fechaNacimiento LocalDate,
+    edad Integer min(0) max(140),
+    sexo Sexo,
+    estado Boolean
+}
+enum Sexo {
+ Hombre, Mujer, Otro
+}
+entity Comunidad {
+	nombre String required,
+	estado Boolean
+}
+entity OrigenEnergia {
+	nombre String required,
+	estado Boolean
+}
+entity OrigenAgua {
+	nombre String required,
+	estado Boolean
+}
+entity TipoVivienda {
+	nombre String required,
+	estado Boolean
+}
+entity TipoServicio {
+	nombre String required,
+	estado Boolean
+}
+entity TipoTratamientoBasura {
+	nombre String required,
+	estado Boolean
+}
+entity Relevamiento {
+	fecha LocalDate required,
+    escuela Boolean
+    puestoSalud Boolean,
+	estado Boolean
+}
+//relaciones
+relationship OneToMany {
+    Integrante{relevamiento} to Relevamiento{integrante},
+    OrigenEnergia{relevamiento} to Relevamiento{origenenergia},
+    OrigenAgua{relevamiento} to Relevamiento{origenagua},
+    TipoServicio{relevamiento} to Relevamiento{tiposervicio},
+    Comunidad{integrante} to Integrante{comunidad}
+}
+
+// Paginacion
+paginate Relevamiento, Integrante with infinite-scroll
+//
+//paginate TipoVivienda, TipoServicio, TipoTratamiento with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl 
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
+

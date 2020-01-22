@@ -1,0 +1,23 @@
+{
+  "testmono04App": {
+    "tipoTratamientoBasura": {
+      "home": {
+        "title": "Tipo Tratamiento Basuras",
+        "createLabel": "Crear nuevo Tipo Tratamiento Basura",
+        "createOrEditLabel": "Crear o editar Tipo Tratamiento Basura",
+        "notFound": "Ningún Tipo Tratamiento Basuras encontrado"
+      },
+      "created": "Un nuevo Tipo Tratamiento Basura ha sido creado con el identificador {{ param }}",
+      "updated": "Un Tipo Tratamiento Basura ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Tipo Tratamiento Basura ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Tipo Tratamiento Basura {{ id }}?"
+      },
+      "detail": {
+        "title": "Tipo Tratamiento Basura"
+      },
+      "nombre": "Nombre",
+      "estado": "Estado"
+    }
+  }
+}

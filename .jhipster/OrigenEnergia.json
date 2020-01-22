@@ -1,0 +1,36 @@
+{
+    "name": "OrigenEnergia",
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "estado",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "relevamiento",
+            "otherEntityRelationshipName": "origenenergia",
+            "relationshipName": "relevamiento"
+        }
+    ],
+    "changelogDate": "20200122234358",
+    "entityTableName": "origen_energia",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": [
+        "testmono04"
+    ]
+}
